@@ -13,11 +13,14 @@ const lookup = {
 function rot13(encodedStr){
    let decodedArr = [];  // Your Result goes here
   // Only change code below this line
-	for(let i=0;i<encodedStr.length;i++){
-    let ch =  String.fromCharCode((encodedStr[i].charCodeAt(0) + 13-65) % 26 + 65);
-		decodedArr[i]=ch;
-	}
-	
+	 for (let i = 0; i < str.length; i++) {
+    let charCode = str.charCodeAt(i);
+    if (charCode >= 65 && charCode <= 90) {
+      // Shift the character code by 13 places
+      charCode = (charCode - 65 + 13) % 26 + 65;
+    }
+    decodedArr += String.fromCharCode(charCode);
+  }
 
   return decodedArr ;//return decodedArr
 }
